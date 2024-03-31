@@ -345,10 +345,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
 
     _checkForInvalidValues();
     _assignController();
-    if (_pinTheme.shape != PinCodeFieldShape.circle &&
-        _pinTheme.shape != PinCodeFieldShape.underline) {
       borderRadius = _pinTheme.borderRadius;
-    }
     _focusNode = widget.focusNode ?? FocusNode();
     _focusNode!.addListener(() {
       _setState(() {});
@@ -895,9 +892,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
                         _pinTheme.inActiveBoxShadows != null)
                     ? _getBoxShadowFromIndex(i)
                     : widget.boxShadows,
-                shape: _pinTheme.shape == PinCodeFieldShape.circle
-                    ? BoxShape.circle
-                    : BoxShape.rectangle,
+                shape:  BoxShape.rectangle,
                 borderRadius: borderRadius,
                 border: _pinTheme.shape == PinCodeFieldShape.underline
                     ? Border(
